@@ -1,3 +1,12 @@
+// import './index.html';
+
+// const button = document.querySelector('#my-button');
+// const result = document.querySelector('#my-result');
+
+// button.addEventListener('click', () => {
+//   result.textContent = 42;
+// });
+
 /* ДЗ 1 - Функции */
 
 /*
@@ -65,17 +74,11 @@ function returnFnResult(fn) {
    console.log(f()); // выведет 12
    console.log(f()); // выведет 13
  */
-function returnCounter(number) {
-  () => {
+function returnCounter(number = 0) {
+  return function () {
     return ++number;
   };
 }
-
-const counter = returnCounter(10);
-
-alert(counter());
-alert(counter());
-alert(counter());
 
 /*
  Задание 5 *:
