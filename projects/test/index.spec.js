@@ -3,7 +3,7 @@ import {
   randomStringArray,
   randomValue as random,
 } from '../../scripts/helper';
-import { calculator, isAllTrue, isSomeTrue, returnBadArguments } from './index';
+import { calculator, isAllTrue, isSomeTrue, returnBadArguments } from '../src/index';
 
 describe('ДЗ 2 - работа с исключениями и отладчиком', () => {
   describe('isAllTrue', () => {
