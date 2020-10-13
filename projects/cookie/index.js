@@ -115,7 +115,7 @@ createdTabl();
 //       obj[name] = value;
 
 //       return obj;
-//     }, new Map());
+//     }, {});
 // }
 
 function getCookies() {
