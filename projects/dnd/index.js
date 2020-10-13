@@ -22,11 +22,19 @@
 import './dnd.html';
 
 const homeworkContainer = document.querySelector('#app');
+const addDivButton = homeworkContainer.querySelector('#addDiv');
 
 let counter = 0;
-// let currentDrag;
+let currentDrag;
+let startX = 0;
+let startY = 0;
 
-document.addEventListener('mousemove', (e) => {});
+document.addEventListener('mousemove', (e) => {
+  if (currentDrag) {
+    currentDrag.style.top = e.clientY - startY + 'px';
+    currentDrag.style.left = e.clientX - startX + 'px';
+  }
+});
 
 export function createDiv() {
   const div = document.createElement('div');
@@ -74,12 +82,19 @@ export function createDiv() {
   div.style.top = positionX + 'px';
   div.style.left = positionY + 'px';
 
+  div.className = 'draggable-div';
   div.draggable = true;
+
+  div.addEventListener('mousedown', (e) => {
+    currentDrag = div;
+    startX = e.offsetX;
+    startY = e.offsetY;
+  });
+
+  div.addEventListener('mouseup', () => (currentDrag = false));
 
   return div;
 }
-
-const addDivButton = homeworkContainer.querySelector('#addDiv');
 
 addDivButton.addEventListener('click', () => {
   // e.preventDefault();
