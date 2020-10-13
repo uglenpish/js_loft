@@ -149,8 +149,8 @@ addButton.addEventListener('click', () => {
 
   createdTabl();
 
-  addNameInput.value = '';
-  addValueInput.value = '';
+  // addNameInput.value = '';
+  // addValueInput.value = '';
 });
 
 listTable.addEventListener('click', (e) => {
