@@ -140,7 +140,7 @@ addButton.addEventListener('click', () => {
   const nameCookie = encodeURIComponent(addNameInput.value.trim());
   const valueCookie = encodeURIComponent(addValueInput.value.trim());
 
-  if (!nameCookie) {
+  if (!nameCookie || !valueCookie) {
     return;
   }
 
